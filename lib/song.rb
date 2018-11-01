@@ -10,8 +10,8 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1
-    @@genres << @genre
-    @@artists << @artist
+    @@genres << genre
+    @@artists << artist
   end
 
   def self.count
@@ -27,16 +27,16 @@ class Song
   end
 
   def self.genre_count
-    @@genres.inject(Hash.new(0)) do |hash, genre|
-      hash[genre] += 1
-      hash
+    @@genres.inject(Hash.new(0)) do |genre_count_hash, genre|
+      genre_count_hash[genre] += 1
+      genre_count_hash
     end
   end
-  
+
   def self.artist_count
-    @@artists.inject(Hash.new(0)) do |hash, artist|
-      hash[artist] += 1
-      hash
+    @@artists.inject(Hash.new(0)) do |artist_count_hash, artist|
+      artist_count_hash[artist] += 1
+      artist_count_hash
     end
   end
 end
