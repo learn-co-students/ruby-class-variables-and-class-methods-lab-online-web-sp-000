@@ -40,6 +40,7 @@ end
 #       #else if it is a new artist being added
 #
 def self.artist_count
+  #set up a counter, iterate over each one and add one, get total
     @@artists.inject(Hash.new(0)) { |total, a| total[a] += 1 ;total}
   end
 
