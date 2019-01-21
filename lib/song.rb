@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist, :genre
 
@@ -41,6 +43,7 @@ class Song
   def self.artist_count
     artist_count = {}
     @@artists.each do |artist|
+      binding.pry
       if artist_count.has_key?(artist)
         artist_count[artist] += 1
       else
