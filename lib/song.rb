@@ -30,12 +30,12 @@ end
 def self.genre_count
   @@genre_count = Hash.new(0)
   @@genres.each{|g| @@genre_count[g] += 1}
-  return @@genre_count
+   @@genre_count
 end
 
 def self.artist_count
   @@artist_count = Hash.new(0)
   @@artists.each{|g| @@artist_count[g] += 1}
-  return @@artist_count
+   @@artist_count
 end
 end
