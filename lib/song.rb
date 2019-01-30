@@ -10,11 +10,10 @@ def initialize(name, artist, genre)
   @name = name
   @artist = artist
   @genre = genre
-#  SONGS.each do |name, artist, genre|
   @@genres << genre
   @@artists << artist
   end
-#end
+
 
 def self.count
   @@count
