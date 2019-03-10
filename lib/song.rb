@@ -42,5 +42,3 @@ class Song
   end
 
 end
-  
-  
