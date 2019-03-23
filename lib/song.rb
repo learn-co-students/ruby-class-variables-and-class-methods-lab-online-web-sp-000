@@ -1,9 +1,12 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist, :genre
 
   @@count = 0
   @@artists = []
   @@genres = []
+  @@genre_count ={}
 
   def initialize(name, artist, genre)
     @name = name
@@ -11,11 +14,10 @@ class Song
     @genre = genre
 
     @@count += 1
-
-
-      @@artists << artist
-
+    @@artists << artist
     @@genres << genre
+    @@genre_count
+    #populate_genre_count(genre)
   end
 
   def self.count
@@ -24,13 +26,24 @@ class Song
 
   def self.artists
     @@artists.uniq
-    ## HERE I NEED THE LOGIC TO DEDUPLICATE
   end
 
   def self.genres
-    @@genres
+    @@genres.uniq
   end
 
+  def self.genre_count
+    @@genre_count
+    #binding.pry
+  end
+
+  def populate_genre_count (genre)
+    if !(@@genre_count.key.include?(genre))
+      @@genre_count[genre] = 1
+    else
+      @@genre_count[genre] +=1
+    end
+  end
 
 
 
