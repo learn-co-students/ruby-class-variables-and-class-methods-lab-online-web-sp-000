@@ -12,9 +12,9 @@ class Song
 
     @@count += 1
 
-    #if !(@@artists.include?(artist))
+
       @@artists << artist
-    #end
+
     @@genres << genre
   end
 
@@ -23,7 +23,7 @@ class Song
   end
 
   def self.artists
-    @@artists
+    @@artists.uniq
     ## HERE I NEED THE LOGIC TO DEDUPLICATE
   end
 
