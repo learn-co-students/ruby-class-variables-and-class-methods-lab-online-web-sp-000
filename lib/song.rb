@@ -7,6 +7,7 @@ class Song
   @@artists = []
   @@genres = []
   @@genre_count ={}
+  @@artist_count ={}
 
   def initialize(name, artist, genre)
     @name = name
@@ -16,8 +17,19 @@ class Song
     @@count += 1
     @@artists << artist
     @@genres << genre
-    @@genre_count
-    #populate_genre_count(genre)
+
+    if !(@@genre_count.keys.include?(genre))
+      @@genre_count[genre] = 1
+    else
+      @@genre_count[genre] +=1
+    end
+
+    if !(@@artist_count.keys.include?(artist))
+      @@artist_count[artist] = 1
+    else
+      @@artist_count[artist] +=1
+    end
+
   end
 
   def self.count
@@ -34,18 +46,11 @@ class Song
 
   def self.genre_count
     @@genre_count
-    #binding.pry
   end
 
-  def populate_genre_count (genre)
-    if !(@@genre_count.key.include?(genre))
-      @@genre_count[genre] = 1
-    else
-      @@genre_count[genre] +=1
-    end
+  def self.artist_count
+    @@artist_count
   end
-
-
 
 
 end # end of Class
