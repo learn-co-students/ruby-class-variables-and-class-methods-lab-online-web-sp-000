@@ -38,4 +38,5 @@ class Song
     @@artists.each {|artist| artist_count[artist] += 1}
     artist_count
   end
+
 end
