@@ -32,8 +32,10 @@ class Song
     genre_count = {}
     @@genres.each do |genre|
       if genre_count.has_key?(genre)
-        count = genre_count[genre] + 1
-        genre_count[genre] = count
+        # count = genre_count[genre] + 1
+        # genre_count[genre] = count
+        # refactor above lines
+        genre_count[genre] += 1
       else
         genre_count[genre] = 1
       end
@@ -45,8 +47,10 @@ class Song
     artist_count = {}
     @@artists.each do |artist|
       if artist_count.has_key?(artist)
-        count = artist_count[artist] + 1
-        artist_count[artist] = count
+        # count = artist_count[artist] + 1
+        # artist_count[artist] = count
+        # refactor above lines
+        artist_count[artist] += 1
       else
         artist_count[artist] = 1
       end
