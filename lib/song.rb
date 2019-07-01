@@ -1,7 +1,9 @@
+require 'pry'
 class Song
  @@count = 0
  @@artists = []
  @@genres = []
+
 
  attr_reader :name, :genre, :artist
 
@@ -14,22 +16,38 @@ class Song
     @@genres << genre
   end
 
-def artists=(array)
-  @artists = @@artists.uniq
+# def artists
+#   @@artists.uniq
+# end
+def self.artists
+  @@artists.uniq
 end
-def artists
-  @artists
-end
-
+# binding.pry
   def self.count
     @@count
   end
-  def self.artists
-    @@artists
-  end
+
   def self.genres
-    @@genres
+    @@genres.uniq
   end
+
+  def self.genre_count
+   @genres_count = Hash.new(0)
+    @@genres.each do |genre|
+      @genres_count[genre] += 1
+    end
+   @genres_count
+  end
+
+  def self.artist_count
+    @artists_count = Hash.new(0)
+     @@artists.each do |artist|
+       @artists_count[artist] += 1
+     end
+    @artists_count
+  end
+
+
 
 
 end
