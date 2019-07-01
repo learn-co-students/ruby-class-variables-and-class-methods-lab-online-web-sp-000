@@ -9,13 +9,14 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
-    @artists = []
-    @artists << artist
     @@count +=1
     @@artists << artist
     @@genres << genre
   end
 
+def artists=(array)
+  @artists = @@artists.uniq
+end
 def artists
   @artists
 end
