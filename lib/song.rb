@@ -16,14 +16,14 @@ class Song
     @genre = genre
     @@genre = genre
     @@count+=1
-    if @@unique_artists.include?(@@artist) == false
+    if @@artists.include?(@@artist) == false
       @@artist_count[@@artist] = 1
       @@artists << @@artist
     else
       @@artist_count[@@artist] +=1
       @@artists << @@artist
     end
-    if @@unique_genres.include?(@@genre) == false
+    if @@genres.include?(@@genre) == false
       @@genre_count[@@genre] = 1
       @@genres << @@genre
     else
