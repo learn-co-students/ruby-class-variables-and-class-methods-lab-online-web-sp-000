@@ -38,27 +38,42 @@ class Song
   end
   
   def self.artist_count
-    @@artists.each do |i|
-      if @@artistCount[i] == nil
-        @@artistCount[i] = 1
-      else
-        @@artistCount[i] += 1
-      end
-    end
-    @@artistCount
+    @@artists.length
   end
   
   def self.genre_count
-    @@genres.each do |i|
-      if @@genreCount[i] == nil
-        @@genreCount[i] = 1
-      else
-        @@genreCount[i] += 1
-      end
-    end
-    @@genreCount
+    @@genres.count
   end
-  
-
-
 end
+
+# array = ["Jay-Z", "Jay-Z", "Brittany Spears"]
+
+# hash = {}
+
+# array.each do |i| 
+#   if hash[i] = nil
+#     hash[i] = 1
+#   else
+#     hash[i] = +1
+# end
+
+names = ["Jason", "Jason", "Teresa", "Judah", "Michelle", "Judah", "Judah", "Allison"]
+counts = {}
+
+
+counts_two = Hash.new(0)
+
+names.each {|i| counts_two[i] += 1}
+
+names.each do |i|
+  if counts[i] == nil
+    counts[i] = 1
+  else
+    counts[i] += 1
+  end
+end
+
+print counts
+print counts_two
+
+# print hash
