@@ -39,14 +39,8 @@ class Song
   def self.genre_count
     genre_h = Hash.new
     @@genres.each do |x|
-      if genre_h.include?(x)
-        if genre_h[x] == 1
-          genre_h[x] = 2
-        elsif genre_h[x] == 2
-          genre_h[x] = 3
-        elsif genre_h[x] == 3
-          genre_h[x] = 4
-        end
+      if genre_h[x]
+        genre_h[x] += 1
       else
         genre_h[x] = 1
       end
@@ -57,14 +51,8 @@ class Song
   def self.artist_count
     hash_a = Hash.new
     @@artists.each do |x|
-      if hash_a.include?(x)
-        if hash_a[x] == 1
-          hash_a[x] = 2
-        elsif hash_a[x] == 2
-          hash_a[x] = 3
-        elsif hash_a[x] == 3
-          hash_a[x] = 4
-        end
+      if hash_a[x]
+        hash_a[x] += 1
       else
         hash_a[x] = 1
       end
