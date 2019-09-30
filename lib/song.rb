@@ -29,15 +29,27 @@ class Song
   end
   
   def self.genre_count
-    @@genres.each do |genre| 
-      binding.pry
-      @@genres[genre] = count.to_i
-    end
-    #returns hash of keys as names of genres, values as songs
+    genre_count = {}
+    @@genres.each do |key| 
+     if genre_count[key].uniq
+      genre_count[key] += 1
+     elsif genre_count[key].uniq
+      genre_count[key] += 0
+     end
+     genre_count
   end
+end
+    #but how to check 
   
-  def artist_count
+  
+  def self.artist_count
+    artist_count = {}
+    @@artists.do each |key|
+    if artist_count[key]#'s value is 0
+       artist_count[key] = 1
+    elsif artist_count[key]#'s value is > 1  
+      artist_count[key] += 1
   end
-  
+end
 end
   
