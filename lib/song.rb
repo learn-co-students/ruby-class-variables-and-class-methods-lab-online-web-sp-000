@@ -30,6 +30,6 @@ class Song
   def self.genre_count
     genrecount = Hash.new
     @genres.each do { |hash, key| hash[key] =  }
-    end
+
   end
 end
