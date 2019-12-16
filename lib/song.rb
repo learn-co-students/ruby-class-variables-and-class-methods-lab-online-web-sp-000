@@ -1,3 +1,4 @@
+require 'pry'
 class Song
 
   attr_accessor :name, :artist, :genre
@@ -28,8 +29,26 @@ class Song
   end
 
   def self.genre_count
-    genrecount = Hash.new
-    
+    genreCount = {}
+    @@genres.each do |genre|
+      if genreCount[genre]
+        genreCount[genre]+=1
+      else
+        genreCount[genre]=1
+      end
+  end
+    return genreCount
+  end
 
+  def self.artist_count
+    artistCount ={}
+    @@artists.each do |artist|
+      if artistCount[artist]
+        artistCount[artist]+=1
+      else
+        artistCount[artist]=1
+      end
+    end
+  return artistCount
   end
 end
