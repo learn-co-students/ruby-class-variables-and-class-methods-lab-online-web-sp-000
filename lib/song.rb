@@ -1,21 +1,18 @@
 class Song
-  attr_accessor :name,:artist,:genre
+  attr_accessor :name, :artist, :genre
 
   @@count = 0
-  @@genres =[]
+  @@genres = []
   @@artists = []
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
-    @@count += 1
+    @@count +=1
     @@genres << genre
     @@artists << artist
-
   end
-
-
 
   def self.count
     @@count
@@ -30,18 +27,15 @@ class Song
   end
 
   def self.artist_count
-    @@artists.each_with_object(Hash.new(0)) do |key, hash|
-      hash[key] += 1
-    end
-  end
+   @@artists.each_with_object(Hash.new(0)) do |key, hash|
+     hash[key] += 1
+   end
+ end
 
-  def self.genre_count
+ def self.genre_count
     @@genres.each_with_object(Hash.new(0)) do |key, hash|
       hash[key] += 1
     end
   end
-
-
-
 
 end
