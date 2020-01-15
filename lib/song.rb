@@ -51,7 +51,7 @@ class Song
                     genre_count
                   end
 end
-#def add_student(student_name, grade)
+#Something similar to this method up there for count
 #
 #if roster[grade]
 #   roster[grade] << student_name
