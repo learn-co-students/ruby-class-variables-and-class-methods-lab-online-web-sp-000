@@ -9,14 +9,21 @@ class Song
 
   @@artists = []
   def self.artists
-    @@artists
+    my_artists = []
+    @@artists.each do |a|
+      my_artists << a if !(my_artists.include?(a))
+    end
+    my_artists
   end
 
   @@genres = []
   def self.genres
-    @@genres
+    my_genres = []
+    @@genres.each do |genre|
+      my_genres << genre if !(my_genres.include?(genre))
+    end
+    my_genres
   end
-#binding.pry
 
   def initialize (name, artist, genre)
      @@count += 1
@@ -28,28 +35,27 @@ class Song
   end
   attr_accessor :name, :artist, :genre
 
-def count
-  @@count.length
-end
-def artists
-  @@artists
-end
-def genres
-    binding.pry
-  my_genres = []
-  @@genres.each do |genre|
-    my_genres << genre if !(my_genres.include?(genre))
+def self.genre_count
+  genre_count = {}
+  @@genres.each do |a|
+    if genre_count.include?(a)
+      genre_count[a] += 1
+    else
+      genre_count[a] = 1
+    end
   end
-
-  my_genres
-
+genre_count
 end
 
-def genre_count
-
-end
-
-def artist_count
-
+def self.artist_count
+  artist_count = {}
+  @@artists.each do |a|
+    if artist_count.include?(a)
+      artist_count[a] += 1
+    else
+      artist_count[a] = 1
+    end
+  end
+artist_count
 end
 end
