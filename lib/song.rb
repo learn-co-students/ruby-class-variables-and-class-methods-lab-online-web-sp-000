@@ -58,4 +58,8 @@ class Song
     end 
     artist_counter
   end
+<<<<<<< HEAD
 end
+=======
+end 
+>>>>>>> 239f31d9745872223ffbbaf2eda8f9965ef87706
