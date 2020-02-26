@@ -1,0 +1,15 @@
+hash = {"cat"=>"Maru", "dog"=>"Pluto", :cat=>"c2"}
+
+pets = ["dog", "cat", "dog", "dog", "cat", "pig"]
+
+  def genre(pets)
+    count = {}
+    pets.each do |pet|
+      if count[pet] == nil
+      count[pet] = 1
+    else
+      count[pet] = count[pet] += 1
+      end
+    end
+      count
+    end
