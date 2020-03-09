@@ -23,19 +23,11 @@ class Song
   end
 
   def self.artists
-    unique_artist_array = []
-    @@artists.map do |artist|
-      unique_artist_array << artist unless unique_artist_array.include?(artist)
-    end
-    unique_artist_array
+    @@artists.uniq
   end
 
   def self.genres
-    unique_genre_array = []
-    @@genres.map do |genre|
-      unique_genre_array << genre unless unique_genre_array.include?(genre)
-    end
-    unique_genre_array
+    @@genres.uniq
   end
 
   def self.genre_count
