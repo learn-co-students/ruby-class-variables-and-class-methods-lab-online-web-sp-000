@@ -19,11 +19,7 @@ class Song
   end
 
   def self.genres
-    genres = []
-    @@genres.each do |genre|
-      genres << genre unless genres.include?(genre)
-    end
-    genres
+    @@genres.uniq
   end
 
   def self.artists
