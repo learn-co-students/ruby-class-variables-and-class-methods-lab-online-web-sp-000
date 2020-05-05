@@ -49,7 +49,7 @@ def self.artist_count
   art = {}
   @@artists.each do |a|
   c = @@artists.count(a)
-  art[a] = c
+  art[a] = @@artists.count(a)
   end
   art
 end
