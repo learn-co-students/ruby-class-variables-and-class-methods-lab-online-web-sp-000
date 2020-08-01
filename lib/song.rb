@@ -41,13 +41,18 @@ class Song
   end
 
   def self.artist_count
-    artist_count_hash = {}
-
-    self.artists.each do |artist|
-      artist_count_hash[artist] = @@artists.select { |matching_artist| matching_artist == artist }.length
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count[artist] # first time around, evaluates to nil, so skips to else
+        # second time around (if there are duplicates in @@artists), evaluate to true, so increments
+        # if there isn't another duplicate, then artist_count[artist] will evaluate to nil and set up that key/value pair
+        # and so on and so forth
+        artist_count[artist] += 1
+      else # assigns key/value pair {artist => 1 (first time around; increments by 1 for duplicates)}
+        artist_count[artist] = 1
+      end
     end
-
-    artist_count_hash
+    artist_count
   end
 
 end
