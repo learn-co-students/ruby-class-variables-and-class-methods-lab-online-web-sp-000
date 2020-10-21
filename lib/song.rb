@@ -29,15 +29,26 @@ end
 
 def self.genre_count
   genre_counter = {}
-    @@genres.map do |genre|
-
+    @@genres.each do |genre|
+      if genre_counter[genre].class == Integer
+        genre_counter[genre] +=1
+      else
+        genre_counter[genre] = 1
+      end
     end
-  return #hash genre => num of songs of that genre
+  return genre_counter
 end
 
 def self.artist_count
-
-  return #hash similar to above
+  artist_counter = {}
+    @@artists.each do |artist|
+      if artist_counter[artist].class == Integer
+        artist_counter[artist] +=1
+      else
+        artist_counter[artist] = 1
+      end
+    end
+  return artist_counter
 end
 
 end
