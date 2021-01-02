@@ -24,9 +24,9 @@ def initialize(name, artist, genre)
   end 
   
   def self.count
-    @@count += 1
+    @@count
   end 
-end  
+  
 
   def self.artists
     @@artists.uniq = []
@@ -44,6 +44,7 @@ end
       else 
       end 
     end 
+  end 
   
    def self.genre_count
     genre_count = {}
