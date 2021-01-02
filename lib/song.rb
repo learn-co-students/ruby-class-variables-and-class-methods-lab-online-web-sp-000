@@ -26,11 +26,11 @@ class Song
   end
   
   def self.artist_count
-    @@artists.tally
+    @@artists.inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}
   end
   
   def self.genre_count
-    @@genres.tally
+    @@genres.inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}
   end
   
 end
