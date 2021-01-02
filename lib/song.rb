@@ -5,13 +5,7 @@ class Song
  @@count = 0 
  
  
-# def self.new (name, artist, genre)
-#     @@name = name 
-#     @@artist = artist 
-#     @@genre = genre 
-# end 
-
-  def initialize(name, artist, genre)
+def initialize(name, artist, genre)
     @name= name
     @artis = artist 
     @genre= genre  
