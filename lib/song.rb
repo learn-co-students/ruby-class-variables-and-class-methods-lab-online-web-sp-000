@@ -1,36 +1,35 @@
 require 'pry'
 
 class Song
- attr_accessor :name, :artist, :genre, :artists, :genres 
+ attr_accessor :name, :artist, :genre
  @@count = 0 
 artists = []
 artists_count = {}
 genre_count = {}
+@@artists = [] 
+@@genres = []
+@@genre = []
 
 def initialize(name, artist, genre)
-     @@genres= genres  
-     @@artists= artists 
-    @name= name
+      @name= name
     @artist= artist 
-    @genre= genre  
+    @genre= genre 
+    @@genres << genre 
     @@count +=1
+     @@artists << artist
      end 
 
 
 def self.count
-  #return "Total count of songs is #{self.count}" 
   return @@count 
 end 
 
  def self.genres 
-   binding.pry 
-   @@genres << genre 
     return @@genres.uniq 
     end 
     
     
   def self.artists
-    @@artists << artist 
     return @@artists.uniq 
     end 
 
