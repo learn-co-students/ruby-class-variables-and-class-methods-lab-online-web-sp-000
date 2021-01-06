@@ -4,7 +4,7 @@ class Song
  attr_accessor :name, :artist, :genre
  @@count = 0 
 artists = []
-artists_count = {}
+artist_count = {}
 genre_count = {}
 @@artists = [] 
 @@genres = []
@@ -34,26 +34,33 @@ end
     end 
 
 
-def self.artists_count
-    @@artists.each do |artist|
-      if !artists_count[artist] 
-        artists_count[artist] = 1
-      else 
-      end 
-    end 
-  end 
+# def self.artist_count
+#     @@artists.each do |artist, count|
+#       if !artist_count[artist] 
+#         artist_count << artist
+#         artist_count[artist] += 1
+#         puts artist_count 
+#       else 
+#       end 
+#     end 
+#   end 
   
    def self.genre_count
-      @@genre.each do |genre|
-        if !genre_count[genre]
-        genre_count[genre] = 1
+      @@genres.each do |genre|
+        #puts "Hash a has_key?
+         if @@genre.has_key?(genre)
+          genre_count << [genre]
+        genres_count[genre] = 1
         else 
-          genre_count[genre] += 1 
+          genre_count[genre] += 1
+          puts genres_count  
         end
     end
   end
 end 
 
+
+#see also pushing elements onto an array, and ruby/hash has_key?{} function
 
 # Class variables should be defined in the top level of the class so any code inside of the class will have access to that variable.
 
