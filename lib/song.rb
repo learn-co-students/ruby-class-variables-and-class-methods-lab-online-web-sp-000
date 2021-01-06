@@ -4,19 +4,16 @@ class Song
  attr_accessor :name, :artist, :genre, :artists, :genres 
  @@count = 0 
 @@artists = []
-@@genres = [] 
 @@artists_count = {}
 @@genre_count = {}
 
 def initialize(name, artist, genre)
-     @@genres= @@genres  
+     @@genres= genres  
      @@artists= artists 
-     
     @name= name
     @artist= artist 
     @genre= genre  
     @@count +=1
-    @@artist_count= artist 
      end 
 
 
@@ -26,17 +23,18 @@ def self.count
 end 
 
  def self.genres 
+   @@genres << @genre 
     return @@genres.uniq 
     end 
     
     
   def self.artists
-    
+    @@artists << @artist 
     return @@artists.uniq 
     end 
 
 
-def self.artists_count 
+def self.artists_count
     @@artists.each do |artist|
       if !artists_count[artist] 
         artists_count[artist] = 1
@@ -70,6 +68,6 @@ end
 
 # The instructions here are pertaining to the .artists method but they indicate that we need to set up some other things for this method to work
 
-# 1) we need a class variable @@artists and it tells us what that should be assigned to
+# 1) we need a class variable @@artists and it tells us what that should be  assigned to
 
 # 2) it tells us what we should do with that variable within the initialize method as
