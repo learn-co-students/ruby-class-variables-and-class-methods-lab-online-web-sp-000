@@ -41,6 +41,8 @@ def self.artist_count
   end 
   
    def self.genre_count
-        puts @genres_count
+        puts @genres_count 
     end
 end 
+
+#Great question! Actually what you could do here is access your collection of genres that you posted above and use that to count the different genres
