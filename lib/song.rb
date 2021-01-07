@@ -53,15 +53,15 @@ end
 
   def self.genre_count
     index = 0 
-    #new_hash = {}
+    new_hash = {}
     @@genres.each_with_index do |name, index|
-    if @@genres[name]
-      @@genres[name] +=1 
+    if new_hash[name]
+      new_hash[name] +=1 
     else 
-      @@genres[name] = 1 
+      new_hash[name] = 1 
     end  
   end
 end 
-#new_hash 
+new_hash 
 end
  
