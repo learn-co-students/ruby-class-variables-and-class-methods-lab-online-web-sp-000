@@ -37,12 +37,29 @@ end
 
 
 def self.artist_count
-    puts @artist_count
-  end 
-  
-   def self.genre_count
-        puts @genres_count 
-    end
+  index = 0 
+  new_hash = {}
+  @@artists.each_with_index do |name, index|
+    if @@artists[name]
+    @@artists[name] +=1 
+    else 
+      @@artists[name] = 1
+      end 
+end 
+new_hash
 end 
 
-#Great question! Actually what you could do here is access your collection of genres that you posted above and use that to count the different genres
+
+
+  def self.genre_count
+    index = 0 
+    new_hash = {}
+    @@genres.each_with_index do |name, index| 
+      if @@genres[name] 
+        @@genres[name] += 1 
+      else 
+        @@genres[name]
+end 
+    end  
+  end 
+end
