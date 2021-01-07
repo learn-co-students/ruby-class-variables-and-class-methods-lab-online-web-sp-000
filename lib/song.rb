@@ -58,7 +58,7 @@ end
       if @@genres[name] 
         @@genres[name] += 1 
       else 
-        @@genres[name]
+        @@genres[name] = 1 
 end 
     end  
   end 
