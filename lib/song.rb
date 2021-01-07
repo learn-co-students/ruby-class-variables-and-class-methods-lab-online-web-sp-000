@@ -39,13 +39,13 @@ end
 def self.artist_count
   index = 0 
   new_hash = {}
-  @@artists.each_with_index do |name, index|
+  @@artists.each_with_index do  |name, index|
     if new_hash[name]
     new_hash[name] +=1 
     else 
       new_hash[name] = 1
       end 
-end 
+    end 
 new_hash
 end 
 
@@ -60,8 +60,7 @@ end
     else 
       new_hash[name] = 1 
     end  
-  end
-end 
-new_hash 
+  end 
+  new_hash 
 end
- 
+end 
