@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
 
     @@count = 0
@@ -20,11 +22,18 @@ class Song
     end
 
     def self.artists
-        artist_summary = []
-        if @@artists.exclude?(@artist)
-            artist_summary << @artist
-        end
-        artist_summary
+        @@artists.uniq
     end
 
+    def self.genres
+        @@genres.uniq
+    end
+
+    def self.genre_count
+        Hash[@@genres.group_by{|v| v}.map{|k,v| [k, v.size]}]
+    end
+
+    def self.artist_count
+        Hash[@@artists.group_by{|v| v}.map{|k,v| [k, v.size]}]
+    end
 end
