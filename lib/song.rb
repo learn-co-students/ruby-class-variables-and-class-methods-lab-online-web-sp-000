@@ -14,16 +14,18 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1 
-    if @@artists.length > 0 
-      @artist << @@artists
-    end
+    @@artists.length += 1 
   end
   
   def self.count
     @@count
   end
 
-  
+  def self.genre_count
+  end
+
+  def self.artist_count
+  end
 
 end
   
