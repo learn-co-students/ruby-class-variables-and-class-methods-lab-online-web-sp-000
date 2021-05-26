@@ -6,7 +6,9 @@ class Song
   @@artists = []
 
   def self.artists
-    @@artists = artists.uniq
+    if @@count >= 1 
+      @artist << @@artists
+    end
   end
   
   def initialize(name, artist, genre)
