@@ -4,10 +4,11 @@ class Song
   
   @@count = 0
   @@artists = []
+  
 
   def self.artists
     if @@count >= 1 
-      @artist << @@artists
+      artist << @@artists
     end
   end
   
@@ -16,13 +17,13 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1 
-    
+    @@artists = artists
   end
   
   def self.count
     @@count
   end
-
+  
   def self.genre_count
   end
 
