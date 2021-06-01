@@ -26,6 +26,13 @@ class Song
   def self.genres
     @@genres.uniq
   end
- 
+  
+  def self.genre_count
+    genre_count = {}
+    if @@genres.length >= 1 
+      genre_count << @@genres
+    end
+  end
+
 end
   
