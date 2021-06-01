@@ -5,7 +5,7 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = [] 
-  
+
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
@@ -35,7 +35,6 @@ class Song
       else
         genre_count[genre] = 1 
       end
-      
     end
     genre_count
   end
@@ -45,6 +44,6 @@ class Song
       puts genre_count.histogram
     end
   end
-
+  
 end
   
