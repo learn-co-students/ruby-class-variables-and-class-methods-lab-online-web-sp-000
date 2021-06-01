@@ -32,6 +32,8 @@ class Song
     @@genre.each do |genre|
       if genre_count.has_key?
         genre_count += 1 
+      else
+        genre_count = 1 
       end
       genre_count 
     end
