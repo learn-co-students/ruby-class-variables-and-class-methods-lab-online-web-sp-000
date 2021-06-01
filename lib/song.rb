@@ -30,7 +30,7 @@ class Song
   def self.genre_count
     genre_count = {}
     if @@genres.has_key?(genre)
-      @@genres(genre) << genre_count
+      @@genres << genre_count
     end
     
   end
