@@ -40,8 +40,8 @@ class Song
   end
 
   def self.artist_count
-    if genre_count.has_key?[genre]
-      puts genre_count.histogram
+    if genre_count.length >= 1 
+      puts genre_count.to_histogram
     end
   end
   
