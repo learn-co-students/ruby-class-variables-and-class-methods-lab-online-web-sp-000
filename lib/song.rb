@@ -32,7 +32,7 @@ class Song
     if @@genres.has_key?(genre)
       @@genres(genre) << genre_count
     end
-    genre.count
+    
   end
 
 end
